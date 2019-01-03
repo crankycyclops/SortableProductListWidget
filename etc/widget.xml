@@ -46,6 +46,24 @@
 				<label translate="true">Cache Lifetime (Seconds)</label>
 				<description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
 			</parameter>
+			<!-- Begin additional fields to configure sort order-->
+			<parameter name="sortfield" xsi:type="select" visible="true" source_model="Crankycyclops\SortableProductListWidget\Model\Config\SortFieldSelect">
+				<label translate="true">Sort Attribute</label>
+				<description translate="true">The product attribute that the list of products should be sorted by. Default value is the product's ID.</description>
+			</parameter>
+			<parameter name="sortdirection" xsi:type="select" visible="true">
+				<label translate="true">Sort Attribute</label>
+				<description translate="true">The product attribute that the list of products should be sorted by. Default direction is ascending order.</description>
+				<options>
+					<option name="default" value="ASC">
+						<label translate="true">Ascending</label>
+					</option>
+					<option name="descending" value="DESC">
+						<label translate="true">Descending</label>
+					</option>
+				</options>
+			</parameter>
+			<!-- End additional fields to configure sort order -->
 			<parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="10"
 					   class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
 				<label translate="true">Conditions</label>
